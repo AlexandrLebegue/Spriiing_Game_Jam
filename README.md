@@ -2,4 +2,4 @@
 
 Notre jeux qui défonce tout :)
 
-Bravo à notre artiste Patricia, bébou Fabien et le weebu Aurélien. 
+Bravo à notre artiste Patricia, bébou Fabien, weebu Aurélien et pipou Alexandre. 
