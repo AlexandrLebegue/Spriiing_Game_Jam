@@ -21,7 +21,7 @@ Plateformer 2D alternant entre deux boucles de gameplay : une **action** et une 
 Thématique(s) narrative(s) : changement après l'enfance, adolescence, transition(s) en général (c'est pas une copie de *Celeste* promis). Accepter ses traumatismes et en ressortir grandi·e
 
 Deux ambiances distinctes :
-- **Monde de l'éveil** très lumineux, ouvert. Thématique sylvestre. Peut-être quelques éléments déroutants quand même ? Un peu grisâtre (voire brumeux) quand même -> REVERDIT à la fin lorsque Bogue se plante
+- **Monde de l'éveil** très lumineux, ouvert. Thématique sylvestre. Peut-être quelques éléments déroutants quand même ? Un peu grisâtre (voire brumeux) quand même -> REVERDIT à la fin lorsque Bogue se plante. Pluie ??
 <br/>*Inspirations* : Ori and the Blind Forest
 - **Monde des traumas** plutôt effrayant. Cyclopéen et clostrophobique en même temps, un peu comme le level design de Little Nightmares (?)
 <br/>*Inspirations* : Ori and the Blind Forest
@@ -38,7 +38,7 @@ Bogue apprend à se déplacer et expérimenter les premières mécaniques de jeu
 2. Transition brutale (glitch) dans le "monde des traumas". Ambiance anxiogène, Bogue est poursuivi (entre des racines ?) par l'oiseau (le rendre un peu figuratif ?)
 Gamefeel toujours assez lent pour créer un sentiment d'urgence. Application des mécaniques apprises dans un contexte plus impliquant
 >Développer transition
-3. Bogue partient à se "réveiller". Retour au "monde de l'éveil" (fin de la vision ?), l'oiseau est tooujours présent sous forme éthérée.
+3. Bogue partient à se "réveiller". Retour au "monde de l'éveil" (fin de la vision ?), de nuit peut-être ?, l'oiseau est tooujours présent sous forme éthérée.
 <br/> Bogue doit apprendre à "switch" entre les deux mondes pour résoudre les puzzles en utilisant l'oiseau
 >Possiilité d'inclure un tableau "inversion" où on contrôle l'oiseau pourchassant Bogue pour comprendre que celui-ci peut aider à résoudre les puzzles
 
@@ -61,7 +61,11 @@ Unity 2D
 
 ### Level Design
 
-Lorem Ipsum
+Même Level Design entre les deux mondes (accentue idée de "revers")
+-> Ajout de l'oiseau + des obstacles divers
+
+D'abord level de gauche à droite puis de droite à gauche
+Juste effets visuels pour l'alternance de niveau ?
 
 ### IHM
 
