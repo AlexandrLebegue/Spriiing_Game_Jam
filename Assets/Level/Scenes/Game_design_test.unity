@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 350987989}
   - component: {fileID: 350987988}
   - component: {fileID: 350987990}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12827,7 +12827,7 @@ GameObject:
   - component: {fileID: 1109993260}
   - component: {fileID: 1109993263}
   - component: {fileID: 1109993262}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23922,7 +23922,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.16313255, y: -0.15}
-  m_Size: {x: 3.763591, y: 8.12}
+  m_Size: {x: 3.72, y: 8.12}
   m_Direction: 0
 --- !u!50 &1706992828
 Rigidbody2D:
@@ -23958,7 +23958,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedForce: 2
-  jumpForce: 2
+  jumpforce: 4
+  boxSize: {x: 0.06, y: 0.002, z: 0}
+  maxDistance: 0.22
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
   animator: {fileID: 1706992830}
   CheckOnGround: 0
   m_MouvementSmoothing: 0.203

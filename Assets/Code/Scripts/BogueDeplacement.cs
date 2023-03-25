@@ -1,16 +1,38 @@
 using UnityEngine;
 using System.Collections;
 
-public class BogueDeplacement : MonoBehaviour {
- 
-    public float speedForce = 2f;
-    public float jumpForce = 2f;
 
+
+
+static class Constants
+{
+public static readonly Vector2 OFFSET_COLLIDE_CROUCH = new Vector2(0.1631325f, -2.12f);
+public static readonly Vector2 SIZE_COLLIDE_CROUCH = new Vector2(4.27f, -4.53f);
+
+public static readonly Vector2 OFFSET_COLLIDE_IDLE = new Vector2(0.1631325f, -0.15f);
+public static readonly Vector2 SIZE_COLLIDE_IDLE = new Vector2(3.763591f, 8.12f);
+
+public static readonly int MIN_HEIGHT = 6;
+
+}
+
+public class BogueDeplacement : MonoBehaviour {
     
+
+
+
+    public float speedForce = 2f;
+    public float jumpforce = 2f;
+
+    public Vector3 boxSize;
+    public float maxDistance;
+    public LayerMask layerMask;
     public Animator animator;
     private Rigidbody2D _playerRigidbody;
     private SpriteRenderer _spriteRenderer;
     private Vector3 m_velocity = Vector3.zero;
+
+    private bool _hasJumped;
 
     [SerializeField] private bool CheckOnGround;
     [Range(0, 1)] [SerializeField] private float m_MouvementSmoothing = .05f;
@@ -26,6 +48,7 @@ public class BogueDeplacement : MonoBehaviour {
         _Move();
         _Jump();
         _Crouch();
+        _GroundCheck();
     }
 
     private void _Crouch() {
@@ -38,30 +61,30 @@ public class BogueDeplacement : MonoBehaviour {
         if (verticalInput < 0) {
             if (!animator.GetBool("Is_Crouching")){
                 animator.SetBool("Is_Crouching", true);
-                var size = capsuleCollider.size;
-                capsule_size.y = capsule_size.y / 2 ;
-                capsuleCollider.size = capsule_size;
-                capsule_offset.y = capsule_offset.y - 0.2f; 
-                capsuleCollider.offset = capsule_offset;
+                // Update collider ... 
+                capsuleCollider.size = Constants.SIZE_COLLIDE_CROUCH;
+                capsuleCollider.offset = Constants.OFFSET_COLLIDE_CROUCH;
             }
 
         } else if (verticalInput > 0 ) {
 
             if (animator.GetBool("Is_Crouching")) {
-                capsule_size.y = capsule_size.y *2 ;
-                capsuleCollider.size = capsule_size;
-                capsule_offset.y = capsule_offset.y + 0.2f; 
-                capsuleCollider.offset = capsule_offset;
+                // Update collider ... 
+                capsuleCollider.size = Constants.SIZE_COLLIDE_IDLE;
+                capsuleCollider.offset = Constants.OFFSET_COLLIDE_IDLE;
             }
                 animator.SetBool("Is_Crouching", false);
-            
         }
     }
 
     private void _Jump() {
-        if (Input.GetButton("Jump") && CheckOnGround == true){
-            CheckOnGround = false;
-            _playerRigidbody.velocity = new Vector2(0f, jumpForce*10f);
+        if (Input.GetButton("Jump") && (_GroundCheck())) {
+            // && (animator.GetBool("Is_Crouching"))
+            var rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector3.up * jumpforce,ForceMode2D.Impulse);
+            // force is jumping test here ... 
+            _hasJumped = true;
+            
         }
     }
 
@@ -89,11 +112,27 @@ public class BogueDeplacement : MonoBehaviour {
             }
         
     }
-
-    private void OnCollisionEnter2D(Collision2D coll) {
-        if(coll.gameObject.tag == "Plateforme") {
-            Debug.Log("eee");
-            CheckOnGround = true;
+    void OnDrawGizmos()
+    {
+        Gizmos.color=Color.red;
+        Gizmos.DrawCube(transform.position-transform.up*maxDistance,boxSize);
+    }
+    private bool _GroundCheck()
+    {
+        if(Physics2D.BoxCast(transform.position,boxSize,0,-transform.up,maxDistance,layerMask))
+        {
+            // Si le personnage a déjà sauté alors on retourne false car le saut commence à avoir lieu 
+            if ( _hasJumped) {
+                return false;
+            }
+            return true;
+        }
+        else{
+            if ( _hasJumped) {
+                
+                _hasJumped = false;
+            }
+            return false;
         }
     }
 
