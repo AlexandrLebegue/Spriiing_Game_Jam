@@ -3,27 +3,49 @@ using System.Collections;
 
 public class BogueDeplacement : MonoBehaviour {
  
-    public float speed = 1f;
-    public float jumph = 5f;
+    public float speedForce = 5f;
+    public float jumpForce = 5f;
+    
+    private Animation _anim;
+    private Rigidbody2D _playerRigidbody;
+    private SpriteRenderer _spriteRenderer;
 
-    void Start () { print ("Start"); }
+    [SerializeField] private bool CheckOnGround;
+
+    void Start () {
+        _anim = GetComponent<Animation>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerRigidbody = GetComponent<Rigidbody2D>();
+        CheckOnGround = false;
+    }
  
     void Update () {
- 
-        Vector3 dp = new Vector3();
- 
-        if (Input.GetKey (KeyCode.Q)) {
-            dp.x -= speed;
-        }
- 
-        if (Input.GetKey (KeyCode.D)) {
-            dp.x += speed;
-        }
-
-        if (Input.GetKey (KeyCode.Space)) {
-            dp.y += jumph;  
-        }
- 
-        transform.position += dp;
+        _Move();
+        _Jump();
     }
+
+    private void _Jump() {
+        if (Input.GetButton("Jump") && CheckOnGround == true){
+            CheckOnGround = false;
+            _playerRigidbody.velocity = new Vector2(0f, jumpForce*10f);
+        }
+    }
+
+    private void _Move(){
+        var horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (horizontalInput < 0) {
+            _spriteRenderer.flipX = true;
+        }else {
+            _spriteRenderer.flipX = false;
+        }
+        _playerRigidbody.AddForce(new Vector2(horizontalInput * speedForce, 0f));
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll) {
+        if(coll.gameObject.tag == "Plateforme") {
+            Debug.Log("eee");
+            CheckOnGround = true;
+        }
+    }
+
 }
