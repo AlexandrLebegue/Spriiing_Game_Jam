@@ -13375,7 +13375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1371201019}
+  speed: 4
   door: {fileID: 1260440547}
+  up: 0
 --- !u!1 &1389039948
 GameObject:
   m_ObjectHideFlags: 0
@@ -14156,7 +14158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1416876958}
+  speed: 2
   door: {fileID: 1260440547}
+  down: 0
 --- !u!61 &1416876957
 BoxCollider2D:
   m_ObjectHideFlags: 0

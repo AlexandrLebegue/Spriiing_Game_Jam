@@ -1,17 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
-public class ChampignonDown : MonoBehaviour {
+public class MichelApparait : MonoBehaviour {
 
     public Animator animator;
 
-    [SerializeField] private Rigidbody2D door;
+    [SerializeField] private Rigidbody2D mousse;
 
     void Start () {}
  
     void Update () {
         if (animator.GetBool("contact_with_bogue")){
-            Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             MoveDoor();
         }
     }
@@ -23,7 +22,7 @@ public class ChampignonDown : MonoBehaviour {
     }
 
     private void MoveDoor(){
-        door.position += new Vector2(0f, -0.2f);
+        mousse.position = new Vector3(mousse.position.x, mousse.position.y, 0f);
     }
 
 }
