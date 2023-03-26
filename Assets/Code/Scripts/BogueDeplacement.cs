@@ -63,7 +63,7 @@ public class BogueDeplacement : MonoBehaviour {
     }
 
      public void ExitTheStick(){
-        _playerRigidbody.gravityScale = 1;
+        _playerRigidbody.gravityScale = 10;
         animator.SetBool("Is_Sticking", false);
 
     }
