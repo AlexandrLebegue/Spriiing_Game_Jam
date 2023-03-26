@@ -99,8 +99,7 @@ public class BogueDeplacement : MonoBehaviour {
     private void _Jump() {
         if (Input.GetButton("Jump") && (_GroundCheck()) && animator.GetBool("Is_Crouching")) {
             // && (animator.GetBool("Is_Crouching"))
-            var rb = GetComponent<Rigidbody2D>();
-            rb.AddForce(Vector3.up * jumpforce,ForceMode2D.Impulse);
+            _playerRigidbody.AddForce(Vector3.up * jumpforce,ForceMode2D.Impulse);
             // force is jumping test here ... 
             _hasJumped = true;
             
