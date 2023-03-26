@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/Menu_Titre.unity
     guid: 589a0804eaff4384e8932b099e63b7be
   - enabled: 1
-    path: Assets/Level/Scenes/IntroCutscene.unity
+    path: Assets/Level/Scenes/OldIntro.unity
     guid: 926dcf25963864b4baa75316c28f9d86
   - enabled: 1
     path: Assets/Level/Scenes/Game_design_test.unity
