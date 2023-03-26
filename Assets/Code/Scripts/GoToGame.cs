@@ -13,7 +13,7 @@ public class GoToGame : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
