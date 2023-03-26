@@ -6,8 +6,8 @@ using System.Collections;
 
 static class Constants
 {
-public static readonly Vector2 OFFSET_COLLIDE_CROUCH = new Vector2(0.1631325f, -2.12f);
-public static readonly Vector2 SIZE_COLLIDE_CROUCH = new Vector2(4.27f, -4.53f);
+public static readonly Vector2 OFFSET_COLLIDE_CROUCH = new Vector2(-0.34f, -0.24f);
+public static readonly Vector2 SIZE_COLLIDE_CROUCH = new Vector2(3.83f, 4.07f);
 
 public static readonly Vector2 OFFSET_COLLIDE_IDLE = new Vector2(0.1631325f, -0.15f);
 public static readonly Vector2 SIZE_COLLIDE_IDLE = new Vector2(3.763591f, 8.12f);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86460e656e54d2e4d98fc5c554c072c5
+guid: 77f9ce0a796e1ee4dadddbf49a9da358
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bogue_crouching_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 56
+        width: 674
+        height: 868
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a13e414eb961d439297e184873c1a8
+      internalID: 1126168848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bogue_crouching_1
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 49
+        width: 994
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54af184ffa3dead4aa1d0551b9ab6812
+      internalID: -910143273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bogue_crouching_2
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 54
+        width: 993
+        height: 1015
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5de18d18ae6cd34db6da25d29f2d368
+      internalID: -1753155476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bogue_crouching_3
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 54
+        width: 994
+        height: 1015
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd927f4f84424914693c8db5f6e309ae
+      internalID: 1604026304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +210,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bogue_crouching_0: 1126168848
+      bogue_crouching_1: -910143273
+      bogue_crouching_2: -1753155476
+      bogue_crouching_3: 1604026304
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
