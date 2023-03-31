@@ -5,16 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class GoToGame : MonoBehaviour
 {
-    public float TimeToWait;
-    // Start is called before the first frame update
+    public float TimerEndIntro;
+    public float TimerRain;
     void Start()
     {
-        StartCoroutine(StartGame());
+        GameObject.Find("Rain").GetComponent<ParticleSystem>().Play(false);
+        //StartCoroutine(PlayRain());
+        StartCoroutine(EndIntro());
     }
-
-    IEnumerator StartGame()
+    /*IEnumerator PlayRain()
     {
-        yield return new WaitForSeconds(TimeToWait);
+        yield return new WaitForSeconds(TimerRain);
+        GameObject.Find("Rain").GetComponent<ParticleSystem>().Play(true);
+    }*/
+
+    IEnumerator EndIntro()
+    {
+        yield return new WaitForSeconds(TimerEndIntro);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
